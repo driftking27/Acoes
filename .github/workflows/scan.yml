@@ -25,11 +25,11 @@ jobs:
       - name: Executar o Scanner
         run: python scanner.py
 
-- name: Salvar resultados no repositorio (Commit & Push)
-  run: |
-    git config --global user.name "GitHub Action"
-    git config --global user.email "action@github.com"
-    git add resultados/oportunidades.csv
-    git diff --quiet && git diff --staged --quiet || (git commit -m "Atualização diária de oportunidades: $(date +'%Y-%m-%d')" && git push)
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Salvar resultados no repositorio (Commit & Push)
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add resultados/oportunidades.csv
+           git diff --quiet && git diff --staged --quiet || (git commit -m "Atualização diária de oportunidades: $(date +'%Y-%m-%d')" && git push)
+          env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
