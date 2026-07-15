@@ -34,7 +34,7 @@ TICKERS = [
 
 EMA_RAPIDA = 80
 EMA_LENTA = 180
-RISCO_RETORNO = 2.0
+RISCO_RETORNO = 1.0
 ARQUIVO_SAIDA = "resultados/oportunidades.csv"
 
 # ---------------------------------------------------------------------------
