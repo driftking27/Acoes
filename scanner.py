@@ -32,8 +32,8 @@ TICKERS = [
     "BEEF3.SA", "CYRE3.SA", "MRVE3.SA", "ASAI3.SA"
 ]
 
-EMA_RAPIDA = 9
-EMA_LENTA = 80
+EMA_RAPIDA = 80
+EMA_LENTA = 180
 RISCO_RETORNO = 2.0
 ARQUIVO_SAIDA = "resultados/oportunidades.csv"
 
