@@ -2,8 +2,21 @@ import os
 import csv
 import time
 from datetime import date
-import pandas as pd
-import yfinance as yf
+try:
+    import pandas as pd  # type: ignore[reportMissingModuleSource]
+except ImportError as erro:
+    raise ImportError(
+        "A biblioteca pandas é necessária para executar este scanner. "
+        "Instale com 'pip install pandas' e tente novamente."
+    ) from erro
+
+try:
+    import yfinance as yf  # type: ignore[reportMissingModuleSource]
+except ImportError as erro:
+    raise ImportError(
+        "A biblioteca yfinance é necessária para executar este scanner. "
+        "Instale com 'pip install yfinance' e tente novamente."
+    ) from erro
 
 # ---------------------------------------------------------------------------
 # CONFIGURAÇÕES
@@ -12,10 +25,10 @@ import yfinance as yf
 TICKERS = [
     "PETR4.SA", "VALE3.SA", "ITUB4.SA", "BBDC4.SA", "BBAS3.SA", "ABEV3.SA", 
     "WEGE3.SA", "RENT3.SA", "SUZB3.SA", "GGBR4.SA", "CSNA3.SA", "USIM5.SA", 
-    "EQTL3.SA", "ELET3.SA", "CPFE3.SA", "TAEE11.SA", "RADL3.SA", "LREN3.SA", 
+    "EQTL3.SA", "AXIA3.SA", "CPFE3.SA", "TAEE11.SA", "RADL3.SA", "LREN3.SA", 
     "MGLU3.SA", "VIVT3.SA", "TOTS3.SA", "PRIO3.SA", "HAPV3.SA", "RDOR3.SA", 
     "BPAC11.SA", "B3SA3.SA", "CMIG4.SA", "SBSP3.SA", "ENGI11.SA", "KLBN11.SA", 
-    "JBSS3.SA", "MRFG3.SA", "CCRO3.SA", "EMBR3.SA", "AZUL4.SA", "GOAU4.SA", 
+    "JBSS3.SA", "MRFG3.SA", "CCRO3.SA", "EMBJ3.SA", "GOAU4.SA", 
     "BEEF3.SA", "CYRE3.SA", "MRVE3.SA", "ASAI3.SA"
 ]
 
